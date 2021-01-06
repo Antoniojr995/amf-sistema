@@ -11,7 +11,7 @@ while($row = $result->fetch_assoc()) {
 	}
 }
 if($ok){
-	header('Location: '.'index.html');
+	header('Location: '.'home.html');
 }else{
 	header('Location: '.'login.html');
 }

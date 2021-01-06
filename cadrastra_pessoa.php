@@ -8,7 +8,7 @@ $endereco=$_POST["endereco"];
 $sql = "INSERT INTO cliente (nome, email, endereco, telefone) VALUES ('".$nome."','".$email."','".$endereco."','".$telefone."')";
 
 if ($conn->query($sql) === TRUE) {
-  header('Location: '.'index.html');
+  header('Location: '.'home.html');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="assets/estilo.css" />
 	</head>
 <?php
+$no=$_POST["a"];
 require_once('conexao.php');
 $sql = "SELECT * FROM cliente";
 
@@ -31,18 +32,20 @@ $clientes = $conn->query($sql);
 									<div class="card-body">
 									    <table class="table table-hover">
 									        <thead>
+
 									            <tr style="color:#ffffff;">
-												<h3><b style="margin-top: 20px; margin-bottom: 40px ; margin-left: 400px; font-size: 30px; margin-bottom: 20px;">cliente</b></h3>
+												<h3><b >Cliente</b></h3>
 									                <th>Nome</th>
+									                <th>Endereço</th>
+									                <th>Email</th>
+									                <th>Telefone</th>
+									                <th></th>
+									                </tr>
 											</thead>
 											<tbody style="color:#ffffff;">
 											<?php foreach($clientes as $cliente) { ?>
 			                                <tr>
-			                                    <td> <form role="form" action="cadrastra_produto.html" method="POST" ><?=$cliente['nome']?><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; ">
-			                                   </form>
-			                                  
-			                                   <form role="form" action="llistaCliente.php" method="POST"><?=$cliente['ID']?><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
-			                                    </td>
+			                                    <td><?=$cliente['nome']?></td>
 			                                    <td><?=$cliente['endereco']?></td>
 			                                    <td><?=$cliente['email']?></td>
 			                                    <td><?=$cliente['telefone']?></td>

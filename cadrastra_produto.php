@@ -10,7 +10,7 @@ $valor=floatval($aux);
 $sql = "INSERT INTO produtos (nome, espesificacao, valor, quantidade, comentario, OB ) VALUES ('".$nome."','".$espe."','".$valor."','".$quantidade."','','".$ns."')";
 
 if ($conn->query($sql) === TRUE) {
-  header('Location: '.'index.html');
+  header('Location: '.'home.html');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
