@@ -7,11 +7,18 @@
 		<link rel="stylesheet" type="text/css" href="assets/estilo.css" />
 	</head>
 <?php
-$no=$_POST["a"];
+$id=$_POST['id'];
 require_once('conexao.php');
-$sql = "SELECT * FROM cliente";
-
-$clientes = $conn->query($sql);
+$sql = "SELECT * FROM cliente WHERE ID=".$id;
+$cliente = $conn->query($sql);
+$sql2 = "SELECT PID FROM cliente RIGHT JOIN produtos ON produtos.Cliente_ID=cliente.ID WHERE cliente.ID=".$id;
+$pids = $conn->query($sql2);
+$produtos=[];
+foreach ($pids as $pid) {
+	$sql3 = "SELECT * FROM produtos WHERE PID=".$pid['PID'];
+	$p = $conn->query($sql3);
+	array_push($produtos, $p);
+}
 ?>
 	<body>
 		<div class="topo">
@@ -28,11 +35,10 @@ $clientes = $conn->query($sql);
                         <div class="box-parent-login">
                             <div class="well bg-white box-login">
                                 <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">Lista de cliente</h1>
-                                <div class="card col-8" style="background-color: #292929;color: #ffffff; margin-left: 200px; height: 70vh; width: 100vh; margin-top: 150px;">
+                                <div class="col-12" style="background-color: #292929;color: #ffffff;">
 									<div class="card-body">
 									    <table class="table table-hover">
 									        <thead>
-
 									            <tr style="color:#ffffff;">
 												<h3><b >Cliente</b></h3>
 									                <th>Nome</th>
@@ -43,14 +49,37 @@ $clientes = $conn->query($sql);
 									                </tr>
 											</thead>
 											<tbody style="color:#ffffff;">
-											<?php foreach($clientes as $cliente) { ?>
+											<?php foreach($cliente as $dado):?>
 			                                <tr>
-			                                    <td><?=$cliente['nome']?></td>
-			                                    <td><?=$cliente['endereco']?></td>
-			                                    <td><?=$cliente['email']?></td>
-			                                    <td><?=$cliente['telefone']?></td>
+			                                    <td><?=$dado['nome']?></td>
+			                                    <td><?=$dado['endereco']?></td>
+			                                    <td><?=$dado['email']?></td>
+			                                    <td><?=$dado['telefone']?></td>
 			                                </tr>
-			                                <?php } ?>
+			                            	<?php endforeach;?>
+											</tbody>
+									    </table>
+									    <table class="table table-hover">
+									        <thead>
+									            <tr style="color:#ffffff;">
+												<h3><b >Produto</b></h3>
+									                <th>Nome</th>
+									                <th>Especificação</th>
+									                <th>Quantidade</th>
+									                <th>Valor</th>
+									                </tr>
+											</thead>
+											<tbody style="color:#ffffff;">
+											<?php foreach($produtos as $produto):?>
+												<?php foreach($produto as $p):?>
+					                                <tr>
+					                                    <td><?=$p['nome']?></td>
+					                                    <td><?=$p['espesificacao']?></td>
+					                                    <td><?=$p['quantidade']?></td>
+					                                    <td>R$<?=$p['valor']?></td>
+					                                </tr>
+			                                	<?php endforeach;?>
+			                                <?php endforeach;?>
 											</tbody>
 									    </table>
 									</div>

@@ -8,9 +8,8 @@
 	</head>
 <?php
 require_once('conexao.php');
-$sql = "SELECT * FROM cliente";
-
-$clientes = $conn->query($sql);
+$sql = "SELECT * FROM produtos";
+$produtos = $conn->query($sql);
 ?>
 	<body>
 		<div class="topo">
@@ -26,28 +25,28 @@ $clientes = $conn->query($sql);
 					<div class="frase2" class="card" style="margin-top: 180px; height: 500px; width: 700px; height: 600px; margin-left: 225px">
                         <div class="box-parent-login">
                             <div class="well bg-white box-login">
-                                <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">Lista de cliente</h1>
+                                <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">lista de Produtos</h1>
                                 <div class="card col-8" style="background-color: #292929;color: #ffffff; margin-left: 200px; height: 70vh; width: 100vh; margin-top: 150px;">
 									<div class="card-body">
 									    <table class="table table-hover">
 									        <thead>
 									            <tr style="color:#ffffff;">
-												<h3><b style="margin-top: 20px; margin-bottom: 40px ; margin-left: 400px; font-size: 30px; margin-bottom: 20px;">cliente</b></h3>
+													<h3><b >Produto</b></h3>
 									                <th>Nome</th>
+									                <th>Especificação</th>
+									                <th>Quantidade</th>
+									                <th>Valor</th>
+									            </tr>
 											</thead>
 											<tbody style="color:#ffffff;">
-											<?php foreach($clientes as $cliente) { ?>
-			                                <tr>
-			                                    <td> <form role="form" action="cadrastra_produto_by_cliente.php" method="POST" ><?=$cliente['nome']?><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; ">
-			                                   </form>
-			                                  
-			                                   <form role="form" action="llistaCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
-			                                    </td>
-			                                    <td><?=$cliente['endereco']?></td>
-			                                    <td><?=$cliente['email']?></td>
-			                                    <td><?=$cliente['telefone']?></td>
-			                                </tr>
-			                                <?php } ?>
+											<?php foreach($produtos as $p):?>
+					                            <tr>
+					                                <td><?=$p['nome']?></td>
+					                                <td><?=$p['espesificacao']?></td>
+					                                <td><?=$p['quantidade']?></td>
+					                                <td>R$<?=$p['valor']?></td>
+					                            </tr>
+			                                <?php endforeach;?>
 											</tbody>
 									    </table>
 									</div>
