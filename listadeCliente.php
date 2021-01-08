@@ -18,8 +18,16 @@ $clientes = $conn->query($sql);
 				<div class="logomarca">
 					<header>Desenvolvimento de Sistemas e Suporte Técnico</header>
 				</div>
-			</div>	
-		</div>	
+					<div class="menu">
+						<ul>
+							<li><a href="ccadrastro.html">cadratra cliente</a></li>
+							<li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
+							<li><a href="listadeProdutos.php">Produtos</a></li>
+							<li><a href="listadeCliente.php">clientes</a></li>
+						</ul>
+					</div>
+				</div>	
+		</div>
 		<div class="banner">
 			<div class="bannerinterior">
 				<div class="banneresquerda">
@@ -38,14 +46,17 @@ $clientes = $conn->query($sql);
 											<tbody style="color:#ffffff;">
 											<?php foreach($clientes as $cliente) { ?>
 			                                <tr>
-			                                    <td> <form role="form" action="cadrastra_produto_by_cliente.php" method="POST" ><?=$cliente['nome']?><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; ">
-			                                   </form>
+			                                    <td> 
+			                                    	<form role="form" action="cadrastra_produto_by_cliente.php" method="POST" ><?=$cliente['nome']?><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; "></form>
 			                                  
-			                                   <form role="form" action="llistaCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
+			                                   		<form role="form" action="llistaCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
+
+			                                   		<form role="form" action="atualizarCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="atualizar cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
 			                                    </td>
-			                                    <td><?=$cliente['endereco']?></td>
+
+			                                    <!--<td><?=$cliente['endereco']?></td>
 			                                    <td><?=$cliente['email']?></td>
-			                                    <td><?=$cliente['telefone']?></td>
+			                                    <td><?=$cliente['telefone']?></td>1--->
 			                                </tr>
 			                                <?php } ?>
 											</tbody>

@@ -26,7 +26,15 @@ foreach ($pids as $pid) {
 				<div class="logomarca">
 					<header>Desenvolvimento de Sistemas e Suporte Técnico</header>
 				</div>
-			</div>	
+					<div class="menu">
+						<ul>
+							<li><a href="ccadrastro.html">cadratra cliente</a></li>
+							<li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
+							<li><a href="listadeProdutos.php">Produtos</a></li>
+							<li><a href="listadeCliente.php">clientes</a></li>
+						</ul>
+					</div>
+				</div>	
 		</div>	
 		<div class="banner">
 			<div class="bannerinterior">
@@ -58,7 +66,7 @@ foreach ($pids as $pid) {
 			                                </tr>
 			                            	<?php endforeach;?>
 											</tbody>
-									    </table>
+										</table>
 									    <table class="table table-hover">
 									        <thead>
 									            <tr style="color:#ffffff;">
@@ -73,10 +81,13 @@ foreach ($pids as $pid) {
 											<?php foreach($produtos as $produto):?>
 												<?php foreach($produto as $p):?>
 					                                <tr>
-					                                    <td><?=$p['nome']?></td>
+					                                    <td><?=$p['pnome']?></td>
 					                                    <td><?=$p['espesificacao']?></td>
 					                                    <td><?=$p['quantidade']?></td>
 					                                    <td>R$<?=$p['valor']?></td>
+					                                    <td>
+					                                    	<form role="form" action="deletarProduto.php" method="POST" ><input type='text' value="<?=$p['PID']?>" style='display: none;' name='pid'><input type="submit" value="apagar produto" class="btn btn-success btn-lg"></form>
+					                                    </td>
 					                                </tr>
 			                                	<?php endforeach;?>
 			                                <?php endforeach;?>

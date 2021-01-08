@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+$id = $_POST['id'];
+?>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -9,28 +12,36 @@
 	
 	<body>
 		<div class="topo">
-			<div class="topointerior">
-				<div class="logomarca">
-					<header>Desenvolvimento de Sistemas e Suporte Técnico</header>
-				</div>
-					<div class="menu">
-						<ul>
-							<li><a href="ccadrastro.html">cadratra cliente</a></li>
-							<li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
-							<li><a href="listadeProdutos.php">Produtos</a></li>
-							<li><a href="listadeCliente.php">clientes</a></li>
-						</ul>
-					</div>
-				</div>	
-		</div>
+            <div class="topointerior">
+                <div class="logomarca">
+                    <header>Desenvolvimento de Sistemas e Suporte Técnico</header>
+                </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="ccadrastro.html">cadratra cliente</a></li>
+                            <li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
+                            <li><a href="listadeProdutos.php">Produtos</a></li>
+                            <li><a href="listadeCliente.php">clientes</a></li>
+                        </ul>
+                    </div>
+                </div>  
+        </div>	
 		<div class="banner">
-			<div class="bannerinterior">
-				<div class="banneresquerda">
-					<div class="frase2" class="card" style="margin-top: 180px; height: 500px; width: 700px; height: 600px; margin-left: 225px">
-                        <div class="box-parent-login">
-                            <div class="well bg-white box-login">
-                                <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">cadrastar cliente</h1>
-                                <form role="form" action="cadrastra_pessoa.php" method="POST" >
+            <div class="bannerinterior">
+                <div class="banneresquerda">
+                    <img src="images/Logofinal.png"/>
+                </div>
+                <div class="bannerdireita">
+                    <div class="frase1">
+                        Atualizar cliente
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="box-parent-login">
+                <div class="well bg-white box-login">
+                    <form action="atualizarClien.php" method="POST" >
                                     <fieldset>
                                         <div class="form-group ls-login-user" style="margin-top: 20px">
                                             <label for="userLogin">Nome</label>
@@ -51,30 +62,18 @@
                                             <input class="form-control ls-login-bg-password input-lg" id="endereco" type="text" aria-label="Endereço" placeholder="Informe o seu Endereço, Ex: Rua das Ruas"style=" background: #E6E8FA"name="endereco">
                                         </div>
                                         <div>
-                                        	OS<br>
-			                                <textarea name="comentarios" id="comentarios" name="comentario"></textarea>
-			                            </div>
-			                            <div id="servidor"style="display: none;">
-			                                <div class="form-group ls-login-password">
-			                                    <label for="cadastro">Cadastro</label>
-			                                    <input type="text" class="form-control ls-login-bg-password input-lg" aria-label="cadastro" name="cadastro" id="cadastro"placeholder="Informe o seu numero de cadastro"style=" background: #E6E8FA">
-			                                </div>
-			                                <div class="form-group ls-login-password">
-			                                    <label for="funcao">Função</label>
-			                                    <input type="text" class="form-control ls-login-bg-password input-lg" aria-label="funcao" name="funcao" id="funcao" placeholder="Informe a sua função na escola"style=" background: #E6E8FA">
-			                                </div>
-			                            </div>
-                        
-                                        <a href="home.html" class="ls-login-forgot">Voltar para a página Home</a><br>
-                        
+                                            OS<br>
+                                            <textarea name="comentarios" id="comentarios" name="comentario"></textarea>
+                                        </div>                
+                                        <a href="index.php" class="ls-login-forgot">Voltar para a página de login</a><br>
+
+                                        <input type='text' value="<?=$id?>" style='display: none;' name='id'> 
                                         <input type="submit" value="Salvar" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; ">
                                     </fieldset>
                                 </form>
                             </div>
                         </div>
-                    </div>
-			</div>
-		</div>
+        </main>
 		<div class="rodape">
 			André Freitas (84) 9 9850-9021 - Todos os direitos reservados
 		</div>

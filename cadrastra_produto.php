@@ -6,10 +6,13 @@ $valor=$_POST["valor"];
 $quantidade=$_POST["quantidade"];
 $ns=$_POST["ns"];
 $id=$_POST['id'];
+if($id>0){
+	$sql = "INSERT INTO produtos (pnome, espesificacao, valor, quantidade, comentario, OB, Cliente_ID ) VALUES ('".$nome."','".$espe."','".$valor."','".$quantidade."','','".$ns."', ".$id.")";
+}else{
+	$sql = "INSERT INTO produtos (pnome, espesificacao, valor, quantidade, comentario, OB) VALUES ('".$nome."','".$espe."','".$valor."','".$quantidade."','','".$ns."')";
+}
 $aux=str_replace(',','.',$valor);
 $valor=floatval($aux);
-$sql = "INSERT INTO produtos (nome, espesificacao, valor, quantidade, comentario, OB, Cliente_ID ) VALUES ('".$nome."','".$espe."','".$valor."','".$quantidade."','','".$ns."', ".$id.")";
-
 if ($conn->query($sql) === TRUE) {
   header('Location: '.'home.html');
 } else {

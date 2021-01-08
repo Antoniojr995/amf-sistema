@@ -12,12 +12,20 @@ $id = $_POST['id'];
 	
 	<body>
 		<div class="topo">
-			<div class="topointerior">
-				<div class="logomarca">
-					<header>Desenvolvimento de Sistemas e Suporte Técnico</header>
-				</div>
-			</div>	
-		</div>	
+            <div class="topointerior">
+                <div class="logomarca">
+                    <header>Desenvolvimento de Sistemas e Suporte Técnico</header>
+                </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="ccadrastro.html">cadratra cliente</a></li>
+                            <li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
+                            <li><a href="listadeProdutos.php">Produtos</a></li>
+                            <li><a href="listadeCliente.php">clientes</a></li>
+                        </ul>
+                    </div>
+                </div>  
+        </div>	
 		<div class="banner">
 			<div class="bannerinterior">
 				<div class="banneresquerda">
