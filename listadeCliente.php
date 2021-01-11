@@ -35,40 +35,47 @@ $clientes = $conn->query($sql);
                         <div class="box-parent-login">
                             <div class="well bg-white box-login">
                                 <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">Lista de cliente</h1>
-                                <div class="card col-8" style="background-color: #292929;color: #ffffff; margin-left: 200px; height: 70vh; width: 100vh; margin-top: 150px;">
-									<div class="card-body">
-									    <table class="table table-hover">
-									        <thead>
-									            <tr style="color:#ffffff;">
-												<h3><b style="margin-top: 20px; margin-bottom: 40px ; margin-left: 400px; font-size: 30px; margin-bottom: 20px;">cliente</b></h3>
-									                <th>Nome</th>
-											</thead>
-											<tbody style="color:#ffffff;">
-											<?php foreach($clientes as $cliente) { ?>
-			                                <tr>
-			                                    <td> 
-			                                    	<form role="form" action="cadrastra_produto_by_cliente.php" method="POST" ><?=$cliente['nome']?><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; "></form>
-			                                  
-			                                   		<form role="form" action="llistaCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
+                                <div class="card col-8" style="background-color: #fff;color: #000; margin-left: 20px; height: 70vh; width: 100vh; margin-top: 150px;">
+									<div class="card-body"style="color:#000">
+										<fieldset style="align-content: center;	align-items: center; ">
+										    <table class="table table-hover">
+										        <thead>
+										            <tr style="color:#000;">
+													<h3><b style="margin-top: 20px; margin-bottom: 40px ; margin-left: 250px; font-size: 30px; margin-bottom: 20px;">cliente</b></h3>
+										                <th>Nome</th>
+												</thead>
+												<tbody style="color:#000;">
+												<?php foreach($clientes as $cliente) { ?>
+													
+						                                <tr>
+						                                    <td> 
+						                                    	<fieldset>
+							                                    	<form role="form" action="cadrastra_produto_by_cliente.php" method="POST" ><?=$cliente['nome']?><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="cadrastra produto" class="btn btn-success btn-lg" style=" margin-left: 200px; width: 300px; "></form>
+							                                  
+							                                   		<form role="form" action="llistaCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="mostra lista do  cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
 
-			                                   		<form role="form" action="atualizarCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="atualizar cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
-			                                    </td>
+							                                   		<form role="form" action="atualizarCliente.php" method="POST"><input type='text' value="<?=$cliente['ID']?>" style='display: none;' name='id'><input type="submit" value="atualizar cliente" class="btn btn-success btn-lg" name="a" style=" margin-left: 200px; width: 300px; "></form>
+						                                   		</fieldset>
+						                                    </td>
+						                                </tr>
+				                                    <!--<td><?=$cliente['endereco']?></td>
+				                                    <td><?=$cliente['email']?></td>
+				                                    <td><?=$cliente['telefone']?></td>1--->
+				                                		
 
-			                                    <!--<td><?=$cliente['endereco']?></td>
-			                                    <td><?=$cliente['email']?></td>
-			                                    <td><?=$cliente['telefone']?></td>1--->
-			                                </tr>
-			                                <?php } ?>
-											</tbody>
-									    </table>
+				                                <?php } ?>
+												</tbody>
+										    </table>
+										</fieldset>    
 									</div>
 								</div>
-
                             </div>
                         </div>
                     </div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
+    </div>
 		<div class="rodape">
 			André Freitas (84) 9 9850-9021 - Todos os direitos reservados
 		</div>
