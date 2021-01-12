@@ -30,7 +30,7 @@ $produtos = $conn->query($sql);
 		<div class="banner">
 			<div class="bannerinterior">
 				<div class="banneresquerda">
-					<div class="frase2" class="card" style="margin-top: 180px; height: 500px; width: 700px; height: 600px; margin-left: 225px">
+					<div class="frase2" class="card" style="margin-top: 180px; height: 500px; width: 700px; height: 600px; margin-left: 100px">
                         <div class="box-parent-login">
                             <div class="well bg-white box-login">
                                 <h1 class="ls-login-logo" style="color: #000 margin-top: 20px; margin-left: 250px">lista de Produtos</h1>
@@ -51,15 +51,15 @@ $produtos = $conn->query($sql);
 													<tbody style="color:#000;">
 													<?php foreach($produtos as $p):?>
 														<tr>
-							                               	<td><?php if($p['nome']){
+							                               	<td><fieldset><?php if($p['nome']){
 								                            		echo $p['nome'];
 								                            	}else{
 								                            		echo "Empresa";
-								                            	}?></td>
-								                                <td><?=$p['pnome']?></td>
-								                                <td><?=$p['espesificacao']?></td>
-								                                <td><?=$p['quantidade']?></td>
-								                                <td><?=$p['valor']?></td>
+								                            	}?></fieldset></td>
+								                                <td><fieldset><?=$p['pnome']?></fieldset></td>
+								                                <td><fieldset><?=$p['espesificacao']?></fieldset></td>
+								                                <td><fieldset><?=$p['quantidade']?></fieldset></td>
+								                                <td><fieldset>R$<?=$p['valor']?></fieldset></td>
 								                                <td>
 								                                    <form role="form" action="deletarProduto.php" method="POST" >
 								                                    	<input type='text' value="<?=$p['PID']?>" style='display: none;' name='pid'>
@@ -71,18 +71,15 @@ $produtos = $conn->query($sql);
 													</tbody>
 											    </table>
 									    	</fieldset>
-									      
 									</div>
 								</div>
-
-                            </div>
+							</div>
                         </div>
                     </div>
+				</div>
 			</div>
 		</div>
-		<div class="rodape">
-			André Freitas (84) 9 9850-9021 - Todos os direitos reservados
-		</div>
+		
 	</body>
 
 </html>

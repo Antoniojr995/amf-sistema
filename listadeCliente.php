@@ -18,15 +18,15 @@ $clientes = $conn->query($sql);
 				<div class="logomarca">
 					<header>Desenvolvimento de Sistemas e Suporte Técnico</header>
 				</div>
-					<div class="menu">
-						<ul>
-							<li><a href="ccadrastro.html">cadratra cliente</a></li>
-							<li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
-							<li><a href="listadeProdutos.php">Produtos</a></li>
-							<li><a href="listadeCliente.php">clientes</a></li>
-						</ul>
-					</div>
-				</div>	
+				<div class="menu">
+					<ul>
+						<li><a href="ccadrastro.html">cadastrar cliente</a></li>
+						<li><a href="cadrastra_produto.html">cadastrar Produtos</a></li>
+						<li><a href="listadeProdutos.php">Produtos</a></li>
+						<li><a href="listadeCliente.php">clientes</a></li>
+					</ul>
+				</div>
+			</div>	
 		</div>
 		<div class="banner">
 			<div class="bannerinterior">
@@ -76,9 +76,7 @@ $clientes = $conn->query($sql);
             </div>
         </div>
     </div>
-		<div class="rodape">
-			André Freitas (84) 9 9850-9021 - Todos os direitos reservados
-		</div>
+		
 	</body>
 
 </html>

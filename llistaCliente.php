@@ -28,8 +28,8 @@ foreach ($pids as $pid) {
 				</div>
 					<div class="menu">
 						<ul>
-							<li><a href="ccadrastro.html">cadratra cliente</a></li>
-							<li><a href="cadrastra_produto.html">cadratra Produtos</a></li>
+							<li><a href="ccadrastro.html">cadastrar cliente</a></li>
+							<li><a href="cadrastra_produto.html">cadastrar Produtos</a></li>
 							<li><a href="listadeProdutos.php">Produtos</a></li>
 							<li><a href="listadeCliente.php">clientes</a></li>
 						</ul>
@@ -43,11 +43,11 @@ foreach ($pids as $pid) {
                         <div class="box-parent-login">
                             <div class="well bg-white box-login">
                                 <h1 class="ls-login-logo" style="margin-top: 20px; margin-left: 250px">Lista de cliente</h1>
-                                <div class="col-12" style="background-color: #292929;color: #ffffff;">
-									<div class="card-body">
+                                <div class="col-12" style="background-color: #ffffff;color: #000;">
+									<div class="card-body" style="color: #000">
 									    <table class="table table-hover">
 									        <thead>
-									            <tr style="color:#ffffff;">
+									            <tr style="color:#000;">
 												<h3><b >Cliente</b></h3>
 									                <th>Nome</th>
 									                <th>Endereço</th>
@@ -56,20 +56,20 @@ foreach ($pids as $pid) {
 									                <th></th>
 									                </tr>
 											</thead>
-											<tbody style="color:#ffffff;">
+											<tbody style="color:#000;">
 											<?php foreach($cliente as $dado):?>
 			                                <tr>
-			                                    <td><?=$dado['nome']?></td>
-			                                    <td><?=$dado['endereco']?></td>
-			                                    <td><?=$dado['email']?></td>
-			                                    <td><?=$dado['telefone']?></td>
+			                                    <td><fieldset><?=$dado['nome']?></fieldset></td>
+			                                    <td><fieldset><?=$dado['endereco']?></fieldset></td>
+			                                    <td><fieldset><?=$dado['email']?></fieldset></td>
+			                                    <td><fieldset><?=$dado['telefone']?></fieldset></td>
 			                                </tr>
 			                            	<?php endforeach;?>
 											</tbody>
 										</table>
 									    <table class="table table-hover">
 									        <thead>
-									            <tr style="color:#ffffff;">
+									            <tr style="color:#000;">
 												<h3><b >Produto</b></h3>
 									                <th>Nome</th>
 									                <th>Especificação</th>
@@ -77,14 +77,14 @@ foreach ($pids as $pid) {
 									                <th>Valor</th>
 									                </tr>
 											</thead>
-											<tbody style="color:#ffffff;">
+											<tbody style="color:#000;">
 											<?php foreach($produtos as $produto):?>
 												<?php foreach($produto as $p):?>
 					                                <tr>
-					                                    <td><?=$p['pnome']?></td>
-					                                    <td><?=$p['espesificacao']?></td>
-					                                    <td><?=$p['quantidade']?></td>
-					                                    <td>R$<?=$p['valor']?></td>
+					                                    <td><fieldset><?=$p['pnome']?></fieldset></td>
+					                                    <td><fieldset><?=$p['espesificacao']?></fieldset></td>
+					                                    <td><fieldset><?=$p['quantidade']?></fieldset></td>
+					                                    <td><fieldset>R$<?=$p['valor']?></fieldset></td>
 					                                    <td>
 					                                    	<form role="form" action="deletarProduto.php" method="POST" ><input type='text' value="<?=$p['PID']?>" style='display: none;' name='pid'><input type="submit" value="apagar produto" class="btn btn-success btn-lg"></form>
 					                                    </td>
@@ -101,9 +101,7 @@ foreach ($pids as $pid) {
                     </div>
 			</div>
 		</div>
-		<div class="rodape">
-			André Freitas (84) 9 9850-9021 - Todos os direitos reservados
-		</div>
+		
 	</body>
 
 </html>
